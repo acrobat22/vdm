@@ -22,9 +22,8 @@ class MessageType extends AbstractType
                         'uiColor' => '#ffffff',
                     )
                 ))
-                ->add('genre')
                 ->add('categorie')
-//                ->add('image', ImageType::class)
+                ->add('image', ImageType::class)
         ;
     }
     

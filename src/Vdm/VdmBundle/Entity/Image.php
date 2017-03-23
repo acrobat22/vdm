@@ -15,7 +15,13 @@ class Image
         return $this->url;
     }
 
-
+    /**
+    * @Assert\Image(
+    *     maxSize = "1k",
+    *     mimeTypes = {"image/*"},
+    *     maxSizeMessage = "The maximum allowed file size is 1MB.",
+    *     mimeTypesMessage = "Please upload a valid Image.")
+    */
     public $fichierCharge;
 
     protected function getUploadDir()
