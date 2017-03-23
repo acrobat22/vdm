@@ -77,3 +77,16 @@ fos_user:
     from_email:
         address: you@example.com
         sender_name: You
+
+# Gestion BBCode
+# CKeditor configuration
+ivory_ck_editor:
+#    base_path: "ckeditor"
+#    js_path:   "/bundles/mediaproject/ivoryckeditor/ckeditor.js"
+    plugins:
+    default_config: my_config
+    configs:
+        my_config:
+            toolbar:                    [ [ 'Preview' ], [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ], [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ], "/", [ 'Bold','Italic','Underline','Strike', 'Blockquote','Subscript','Superscript','-','RemoveFormat' ], [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ], [ 'Link','Unlink','Anchor' ], [ 'pbckcode', 'Smiley', 'Image', 'Video', 'Table','SpecialChar','Iframe' ], '/', [ 'Styles', 'Format','Font','FontSize' ], [ 'TextColor','BGColor' ], [ 'RemoveFormat' ], [ 'Maximize' ] ]
+            language: %locale%
+            uiColor: #FFA500

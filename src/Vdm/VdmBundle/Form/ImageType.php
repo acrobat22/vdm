@@ -7,23 +7,25 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
-class CategorieType extends AbstractType
+class ImageType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')        ;
+        $builder
+            ->add('fileCharge', 'file', array('label' => 'Image', 'required' => false, 'attr' => array('accept' => 'image/*')))
+            ->add('alt');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Vdm\VdmBundle\Entity\Categorie'
+            'data_class' => 'Vdm\VdmBundle\Entity\Image'
         ));
     }
 
@@ -32,8 +34,6 @@ class CategorieType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'vdm_vdmbundle_categorie';
+        return 'vdmbundle_image';
     }
-
-
 }
