@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Likemessages list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for likeMessage in likeMessages %}
+            <tr>
+                <td><a href="{{ path('likemessage_show', { 'id': likeMessage.id }) }}">{{ likeMessage.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('likemessage_show', { 'id': likeMessage.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

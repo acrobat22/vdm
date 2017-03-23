@@ -1,12 +1,27 @@
+# -------------------------
+# Bundle VdmBundle
+# -------------------------
 vdm_vdm:
     resource: "@VdmVdmBundle/Resources/config/routing.yml"
     prefix:   /
 
+# -------------------------
+# Bundle VdmBundle => message
+# -------------------------
 vdm_vdm_message:
         resource: "@VdmVdmBundle/Resources/config/routing/message.yml"
         prefix:   /message
 
+# -------------------------
+# Bundle VdmBundle => likemessage
+# -------------------------
+vdm_vdm_likemessage:
+        resource: "@VdmVdmBundle/Resources/config/routing/likemessage.yml"
+        prefix:   /likemessage
 
+# -------------------------
+# Bundle UserBundle
+# -------------------------
 vdm_user:
     resource: "@VdmUserBundle/Resources/config/routing.yml"
     prefix:   /

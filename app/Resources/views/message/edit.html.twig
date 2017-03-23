@@ -4,38 +4,33 @@
     <h1>Message edit</h1>
 
     {{ form_start(edit_form) }}
-        <div>
+    <div>
         {{ form_label(edit_form.titre) }}
         {{ form_widget(edit_form.titre) }}
         {{ form_errors(edit_form.titre) }}
-        </div>
+    </div>
 
-        <div>
+    <div>
         {{ form_label(edit_form.contenu) }}
         {{ form_widget(edit_form.contenu) }}
         {{ form_errors(edit_form.contenu) }}
-        </div>
+    </div>
 
-        <div">
-        {{ form_label(edit_form.categorie) }}
-        {{ form_widget(edit_form.categorie) }}
-        {{ form_errors(edit_form.categorie) }}
-        </div>
-
-    {# Affichage de l'image sélectionnée #}
-    <div>
-        <img class="hide" id="blah" src="#" alt="your image" />
+    <div">
+    {{ form_label(edit_form.categorie) }}
+    {{ form_widget(edit_form.categorie) }}
+    {{ form_errors(edit_form.categorie) }}
     </div>
 
     <div>
         <div>
+            <img src="{{ asset('uploads/images/') }}{{ message.image.url }}" alt="{{ message.image.alt }}">
+
             <div class="btn">
                 <span>Changer l'image</span>
                 {{ form_widget(edit_form.image.fichierCharge) }}
             </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Cliquez pour modifier votre image.">
-            </div>
+
             {{ form_errors(edit_form.image.fichierCharge) }}
         </div>
         <div>
@@ -44,18 +39,17 @@
             {{ form_errors(edit_form.image.alt) }}
         </div>
     </div>
-        <input type="submit" value="Edit" />
+    <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
 
-    <img src="{{ asset('uploads/images/') }}{{ message.image.url }}" alt="{{ message.image.alt }}">
     <ul>
         <li>
             <a href="{{ path('message_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

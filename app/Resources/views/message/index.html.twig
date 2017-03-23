@@ -11,6 +11,7 @@
                 <th>Contenu</th>
                 <th>Datecreate</th>
                 <th>Genre</th>
+                <th>Photo</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,6 +23,8 @@
                 <td>{{ message.contenu|raw }}</td>
                 <td>{% if message.dateCreate %}{{ message.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ message.genre }}</td>
+                <td><img src="{{ asset('uploads/images/') }}{{ message.image.url }}" alt="{{ message.image.alt }}">
+                </td>
                 <td>
                     <ul>
                         <li>
