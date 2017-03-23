@@ -10,7 +10,6 @@
                 <th>Titre</th>
                 <th>Contenu</th>
                 <th>Datecreate</th>
-                <th>Genre</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,7 +20,6 @@
                 <td>{{ message.titre }}</td>
                 <td>{{ message.contenu }}</td>
                 <td>{% if message.dateCreate %}{{ message.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ message.genre }}</td>
                 <td>
                     <ul>
                         <li>

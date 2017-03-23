@@ -17,9 +17,6 @@ Vdm\VdmBundle\Entity\Message:
             length: 255
         dateCreate:
             type: datetime
-        genre:
-            type: string
-            length: 255
     lifecycleCallbacks: {  }
 
     manyToOne:
