@@ -1,0 +1,29 @@
+Vdm\VdmBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: Vdm\VdmBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        contenu:
+            type: string
+            length: 255
+        dateCreate:
+            type: datetime
+        genre:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        categorie:
+            targetEntity: Vdm\VdmBundle\Entity\Categorie
+        utilisateur:
+            targetEntity: Vdm\UserBundle\Entity\Utilisateur

@@ -1,0 +1,7 @@
+vdm_vdm_categorie:
+    resource: "@VdmVdmBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+vdm_vdm_homepage:
+    path:     /
+    defaults: { _controller: VdmVdmBundle:Default:index }

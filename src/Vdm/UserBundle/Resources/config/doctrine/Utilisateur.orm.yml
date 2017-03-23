@@ -1,0 +1,15 @@
+Vdm\UserBundle\Entity\Utilisateur:
+    type: entity
+    table: null
+    repositoryClass: Vdm\UserBundle\Repository\UtilisateurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        pseudo:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
