@@ -1,0 +1,12 @@
+likemessage_index:
+    path:     /
+    defaults: { _controller: "VdmVdmBundle:LikeMessage:index" }
+    methods:  GET
+
+likemessage_show:
+    path:     /show
+    defaults: { _controller: "VdmVdmBundle:LikeMessage:show" }
+    methods:  GET
+
+
+

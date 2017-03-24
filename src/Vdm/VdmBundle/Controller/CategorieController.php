@@ -22,7 +22,7 @@ class CategorieController extends Controller
 
         $categories = $em->getRepository('VdmVdmBundle:Categorie')->findAll();
 
-        return $this->render('categorie/index.html.twig', array(
+        return $this->render(':categorie:index.html.twig', array(
             'categories' => $categories,
         ));
     }

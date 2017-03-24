@@ -10,6 +10,7 @@
                 <th>Titre</th>
                 <th>Contenu</th>
                 <th>Datecreate</th>
+                <th>Photo</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -18,8 +19,10 @@
             <tr>
                 <td><a href="{{ path('message_show', { 'id': message.id }) }}">{{ message.id }}</a></td>
                 <td>{{ message.titre }}</td>
-                <td>{{ message.contenu }}</td>
+                <td>{{ message.contenu|raw }}</td>
                 <td>{% if message.dateCreate %}{{ message.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td><img src="{{ asset('uploads/images/') }}{{ message.image.url }}" alt="{{ message.image.alt }}">
+                </td>
                 <td>
                     <ul>
                         <li>

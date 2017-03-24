@@ -3,37 +3,30 @@
 namespace Vdm\VdmBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 
-class MessageType extends AbstractType
+class ImageType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')
-                ->add('contenu', CKEditorType::class, array(
-                    'config' => array(
-                        'config_name' => 'my_config',
-                        'uiColor' => '#ffffff',
-                    )
-                ))
-                ->add('categorie')
-                ->add('image', ImageType::class)
-        ;
+        $builder
+            ->add('fichierCharge', FileType::class, array('label' => 'Image', 'required' => false, 'attr' => array('accept' => 'image/*')))
+            ->add('alt');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Vdm\VdmBundle\Entity\Message'
+            'data_class' => 'Vdm\VdmBundle\Entity\Image'
         ));
     }
 
@@ -42,8 +35,6 @@ class MessageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'vdm_vdmbundle_message';
+        return 'vdmbundle_image';
     }
-
-
 }
