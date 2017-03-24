@@ -8,77 +8,34 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class Utilisateur extends BaseUser
 {
+
     /**
-     * @var int
+     * @var \Vdm\VdmBundle\Entity\Message
      */
-    protected $id;
+    private $message;
 
 
     /**
-     * Get id
+     * Set message
      *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-    /**
-     * @var string
-     */
-    private $pseudo;
-
-
-    /**
-     * Set pseudo
-     *
-     * @param string $pseudo
+     * @param \Vdm\VdmBundle\Entity\Message $message
      *
      * @return Utilisateur
      */
-    public function setPseudo($pseudo)
+    public function setMessage(\Vdm\VdmBundle\Entity\Message $message = null)
     {
-        $this->pseudo = $pseudo;
+        $this->message = $message;
 
         return $this;
     }
 
     /**
-     * Get pseudo
+     * Get message
      *
-     * @return string
+     * @return \Vdm\VdmBundle\Entity\Message
      */
-    public function getPseudo()
+    public function getMessage()
     {
-        return $this->pseudo;
-    }
-    /**
-     * @var \Vdm\VdmBundle\Entity\Image
-     */
-    private $image;
-
-
-    /**
-     * Set image
-     *
-     * @param \Vdm\VdmBundle\Entity\Image $image
-     *
-     * @return Utilisateur
-     */
-    public function setImage(\Vdm\VdmBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \Vdm\VdmBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
+        return $this->message;
     }
 }

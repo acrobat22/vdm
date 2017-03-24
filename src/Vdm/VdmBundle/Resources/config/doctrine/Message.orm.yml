@@ -27,3 +27,8 @@ Vdm\VdmBundle\Entity\Message:
         image:
             targetEntity: Vdm\VdmBundle\Entity\Image
             cascade: ["persist", "remove"]
+
+    oneToMany:
+        utilisateurs:
+            targetEntity: Vdm\UserBundle\Entity\Utilisateur
+            mappedBy: message
