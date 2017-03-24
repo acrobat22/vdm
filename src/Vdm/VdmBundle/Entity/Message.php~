@@ -17,3 +17,36 @@ class Message
     /****************************************************/
 
     }
+<<<<<<< HEAD
+    /**
+     * @var \Vdm\VdmBundle\Entity\Image
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param \Vdm\VdmBundle\Entity\Image $image
+     *
+     * @return Message
+     */
+    public function setImage(\Vdm\VdmBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Vdm\VdmBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}
+=======
+>>>>>>> 6be8faaf344e404c9d7d2d8a144b1a75e408b129

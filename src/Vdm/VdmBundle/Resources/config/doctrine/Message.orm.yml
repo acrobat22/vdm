@@ -24,3 +24,6 @@ Vdm\VdmBundle\Entity\Message:
             targetEntity: Vdm\VdmBundle\Entity\Categorie
         utilisateur:
             targetEntity: Vdm\UserBundle\Entity\Utilisateur
+        image:
+            targetEntity: Vdm\VdmBundle\Entity\Image
+            cascade: ["persist", "remove"]

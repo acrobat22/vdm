@@ -176,4 +176,33 @@ class Message
     {
         return $this->utilisateur;
     }
+    /**
+     * @var \Vdm\VdmBundle\Entity\Image
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param \Vdm\VdmBundle\Entity\Image $image
+     *
+     * @return Message
+     */
+    public function setImage(\Vdm\VdmBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Vdm\VdmBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

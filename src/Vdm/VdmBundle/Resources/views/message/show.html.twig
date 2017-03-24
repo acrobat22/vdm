@@ -15,8 +15,12 @@
             </tr>
             <tr>
                 <th>Contenu</th>
-                <td>{{ message.contenu }}</td>
+                <td>{{ message.contenu|raw }}</td>
             </tr>
+            <tr>Image</tr>
+            <td>
+                <img src="{{ asset('uploads/images/') }}{{ message.image.url }}" alt="{{ message.image.alt }}">
+            </td>
             <tr>
                 <th>Datecreate</th>
                 <td>{% if message.dateCreate %}{{ message.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -42,3 +46,4 @@
         </li>
     </ul>
 {% endblock %}
+

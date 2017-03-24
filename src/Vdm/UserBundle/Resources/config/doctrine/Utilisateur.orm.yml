@@ -13,3 +13,8 @@ Vdm\UserBundle\Entity\Utilisateur:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        image:
+            targetEntity: Vdm\VdmBundle\Entity\Image
+            cascade: ["persist", "remove"]
