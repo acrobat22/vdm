@@ -22,7 +22,7 @@ class MessageController extends Controller
 
         $messages = $em->getRepository('VdmVdmBundle:Message')->findAll();
 
-        return $this->render('message/index.html.twig', array(
+        return $this->render('@VdmVdm/message/index.html.twig', array(
             'messages' => $messages,
         ));
     }
@@ -45,7 +45,7 @@ class MessageController extends Controller
             return $this->redirectToRoute('message_show', array('id' => $message->getId()));
         }
 
-        return $this->render('message/new.html.twig', array(
+        return $this->render('@VdmVdm/message/new.html.twig', array(
             'message' => $message,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class MessageController extends Controller
     {
         $deleteForm = $this->createDeleteForm($message);
 
-        return $this->render('message/show.html.twig', array(
+        return $this->render('@FOSUser/Group/show.html.twig', array(
             'message' => $message,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,7 +81,7 @@ class MessageController extends Controller
             return $this->redirectToRoute('message_edit', array('id' => $message->getId()));
         }
 
-        return $this->render('message/edit.html.twig', array(
+        return $this->render('@VdmVdm/message/edit.html.twig', array(
             'message' => $message,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

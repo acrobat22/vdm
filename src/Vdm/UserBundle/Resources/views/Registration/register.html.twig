@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <nav class="mainmenu">
+        <div class="container">
+            <div class="dropdown">
+                <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="{{ path('') }}" class="active">Accueil</a></li>
+                    <li><a href="#themes">Les VDM</a></li>
+                    <li><a href="#contact">Get in touch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+
+            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+
+                <!-- Site Title, your name, HELLO msg, etc. -->
+                <h1 class="title">VDM au Camping</h1>
+                <h2 class="subtitle">Créer votre compte</h2>
+
+
+            </div> <!-- /col -->
+
+{% block fos_user_content %}
+{% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}
+
+    </div>
+{% endblock %}

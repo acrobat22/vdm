@@ -16,7 +16,7 @@ class Message
     //                GENERATED CODE                    //
     /****************************************************/
 
-    /**
+        /**
      * @var integer
      */
     private $id;
@@ -35,11 +35,6 @@ class Message
      * @var \DateTime
      */
     private $dateCreate;
-
-    /**
-     * @var string
-     */
-    private $genre;
 
     /**
      * @var \Vdm\VdmBundle\Entity\Categorie
@@ -132,30 +127,6 @@ class Message
     public function getDateCreate()
     {
         return $this->dateCreate;
-    }
-
-    /**
-     * Set genre
-     *
-     * @param string $genre
-     *
-     * @return Message
-     */
-    public function setGenre($genre)
-    {
-        $this->genre = $genre;
-
-        return $this;
-    }
-
-    /**
-     * Get genre
-     *
-     * @return string
-     */
-    public function getGenre()
-    {
-        return $this->genre;
     }
 
     /**
