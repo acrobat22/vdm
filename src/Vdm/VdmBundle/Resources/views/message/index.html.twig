@@ -31,6 +31,12 @@
                         <li>
                             <a href="{{ path('message_edit', { 'id': message.id }) }}">edit</a>
                         </li>
+
+                        {# Bouton like#}
+                        <li>
+                            <a href="{{ path('likeBouton', {'message': message.id , 'utilisateur': app.user.id }) }}">like</a>
+                        </li>
+
                     </ul>
                 </td>
             </tr>

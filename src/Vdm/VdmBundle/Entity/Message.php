@@ -16,7 +16,7 @@ class Message
     //                GENERATED CODE                    //
     /****************************************************/
 
-        /**
+    /**
      * @var integer
      */
     private $id;
@@ -37,6 +37,11 @@ class Message
     private $dateCreate;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $utilisateurs;
+
+    /**
      * @var \Vdm\VdmBundle\Entity\Categorie
      */
     private $categorie;
@@ -45,6 +50,11 @@ class Message
      * @var \Vdm\UserBundle\Entity\Utilisateur
      */
     private $utilisateur;
+
+    /**
+     * @var \Vdm\VdmBundle\Entity\Image
+     */
+    private $image;
 
 
     /**
@@ -130,6 +140,40 @@ class Message
     }
 
     /**
+     * Add utilisateur
+     *
+     * @param \Vdm\UserBundle\Entity\Utilisateur $utilisateur
+     *
+     * @return Message
+     */
+    public function addUtilisateur(\Vdm\UserBundle\Entity\Utilisateur $utilisateur)
+    {
+        $this->utilisateurs[] = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Remove utilisateur
+     *
+     * @param \Vdm\UserBundle\Entity\Utilisateur $utilisateur
+     */
+    public function removeUtilisateur(\Vdm\UserBundle\Entity\Utilisateur $utilisateur)
+    {
+        $this->utilisateurs->removeElement($utilisateur);
+    }
+
+    /**
+     * Get utilisateurs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUtilisateurs()
+    {
+        return $this->utilisateurs;
+    }
+
+    /**
      * Set categorie
      *
      * @param \Vdm\VdmBundle\Entity\Categorie $categorie
@@ -176,11 +220,6 @@ class Message
     {
         return $this->utilisateur;
     }
-    /**
-     * @var \Vdm\VdmBundle\Entity\Image
-     */
-    private $image;
-
 
     /**
      * Set image

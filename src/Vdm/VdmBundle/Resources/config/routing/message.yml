@@ -22,3 +22,8 @@ message_delete:
     path:     /{id}/delete
     defaults: { _controller: "VdmVdmBundle:Message:delete" }
     methods:  DELETE
+
+
+likeBouton:
+    path:     /show/{utilisateur}/{message}/
+    defaults: { _controller: "VdmVdmBundle:Default:like" }

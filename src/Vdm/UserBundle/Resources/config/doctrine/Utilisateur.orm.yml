@@ -8,13 +8,21 @@ Vdm\UserBundle\Entity\Utilisateur:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        pseudo:
-            type: string
-            length: 255
-    lifecycleCallbacks: {  }
+#    fields:
+#        pseudo:
+#            type: string
+#            length: 255
+#    lifecycleCallbacks: {  }
+#
+#    manyToOne:
+#        image:
+#            targetEntity: Vdm\VdmBundle\Entity\Image
+#            cascade: ["persist", "remove"]
 
     manyToOne:
-        image:
-            targetEntity: Vdm\VdmBundle\Entity\Image
-            cascade: ["persist", "remove"]
+        message:
+            targetEntity: Vdm\VdmBundle\Entity\Message
+            inversedBy: utilisateurs
+            joinColumn:
+                name: utilisateur_id
+                referencedColumnName: id
